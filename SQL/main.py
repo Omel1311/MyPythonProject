@@ -9,7 +9,8 @@ try:
         user=user,
         password=password,
         database=db_name,
-        cursorclass=pymysql.cursors.DictCursor
+        cursorclass=pymysql.cursors.Cursor
+        # cursorclass = pymysql.cursors.DictCursor
     )
     print("successfully connected...")
     print("#" * 20)
@@ -71,12 +72,12 @@ try:
 
         # select all data from table
         with connection.cursor() as cursor:
-            select_all_rows = "SELECT * FROM `users`"
+            select_all_rows = "SELECT * FROM employees where l_name='kumar'"
             cursor.execute(select_all_rows)
             # cursor.execute("SELECT * FROM `users`")
             rows = cursor.fetchall()
             for row in rows:
-                print(row)
+                print(row, '\n')
             print("#" * 20)
 
     finally:
