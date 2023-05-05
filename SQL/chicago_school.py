@@ -47,8 +47,9 @@ try:
 
     with connection.cursor() as cursor:
         # table_name = "select table_name FROM information_schema.tables where table_schema='coursera';"
-        el_school = "SELECT NAME_OF_SCHOOL, SAFETY_SCORE FROM chicagopublicschools where SAFETY_SCORE = (select max(SAFETY_SCORE) from chicagopublicschools);"
-        cursor.execute(el_school)
+        #el_school = "SELECT NAME_OF_SCHOOL, SAFETY_SCORE FROM chicagopublicschools where SAFETY_SCORE = (select max(SAFETY_SCORE) from chicagopublicschools);"
+        avg = "SELECT NAME_OF_SCHOOL, AVERAGE_STUDENT_ATTENDANCE FROM coursera.chicagopublicschools order by AVERAGE_STUDENT_ATTENDANCE desc limit 10"
+        cursor.execute(avg)
         t = cursor.fetchall()
 
         for i, n in enumerate(t, start=1):
@@ -58,7 +59,7 @@ try:
         df = pd.DataFrame(t)
 
         # cохранение датафрейм в  mysql
-        df.to_sql('999', con=engine, if_exists='append')
+        df.to_sql('high_average', con=engine, if_exists='append')
 
 except Exception as ex:
     print("Connection refused...")
