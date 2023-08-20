@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 # data = pd.DataFrame({'id': [333, 5554, 666, 333, 777], 'name': ['one', 'sds', 'two', 'three', 'four']})
 # print(data, type(data))
-data = pd.read_csv('C:\\Users\Пользователь\Downloads\ChicagoPublicSchools.csv')
+print(df.describe())
 # data2 = data.describe()
 # print(type(data))
 # print(data.head())
