@@ -1,5 +1,9 @@
 import folium
-m = folium.Map(location=[46.49018537408449, 30.74506642710343], zoom_start=15, tiles="Mapbox Bright")
+# 'Stamen Terrain
+# Stamen Toner
+# Stamen Water Color
+# CartoDB Positron
+m = folium.Map(location=[46.49018537408449, 30.74506642710343], zoom_start=15, tiles="CartoDB Positron")
 e = 12
 Cicon = folium.features.CustomIcon('20200803_201816.jpg', icon_size=(50,50))
 
