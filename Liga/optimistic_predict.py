@@ -89,7 +89,7 @@ optimistic_2024 = df.iloc[39, 21]
 optimistic_income_rounded_2024 = round(optimistic_2024, 2)
 
 print("  ")
-print("Итоги расчетов: ")
+print("Итоги расчетов:(с учетом удержания клиентов)")
 print("Прогнозируемый (ОПТИМИСТИЧЕКИЙ) доход компании Liga360 за III квартал 2023 года: ",
       optimistic_income_rounded, 'грн')
 
